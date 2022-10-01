@@ -24,6 +24,7 @@ public class Connection  implements IConnection {
     File file=new File(System.getProperty("user.dir")+ Paths.get("/src/main/java/Server/DataBase/Clients.xls"));;
     protected Connection() throws RemoteException {
         super();
+
     }
 
     private boolean IsRegitered(HSSFSheet sheet, Client client ) {
@@ -98,7 +99,7 @@ public class Connection  implements IConnection {
                         System.out.println("Welcome, you are now connected");
                     }
                 }else{
-                    throw  new InvalidCredentialsException("You not registered. Please sign in.");
+                    throw  new InvalidCredentialsException("You are not registered. Please sign in.");
                 }
             }
         }catch(Exception exception){

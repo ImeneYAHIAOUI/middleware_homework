@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a52bb3cb-c1a3-4b54-9c6d-7608a3f8c98a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../client/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Server/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Server/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/Server/Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Server/Connection.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FXI1x4N9I1lIsoMXmWRcK0WCkP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/yimen/Documents/middleware/middleware_homework/client",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a52bb3cb-c1a3-4b54-9c6d-7608a3f8c98a" name="Changes" comment="" />
+      <created>1664631792121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664631792121</updated>
+      <workItem from="1664631793702" duration="156000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
