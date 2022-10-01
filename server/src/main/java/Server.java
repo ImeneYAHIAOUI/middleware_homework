@@ -1,7 +1,6 @@
-package Server;
 
-
-import Server.contrats.IConnection;
+import contrats.IConnection;
+import contrats.MovieDesc;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;

@@ -1,4 +1,4 @@
-package Server;
+package contrats;
 
 public class InvalidCredentialsException extends Exception {
     public InvalidCredentialsException(){

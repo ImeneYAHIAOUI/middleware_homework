@@ -1,15 +1,16 @@
-package Server;
-import Server.contrats.IConnection;
+import contrats.IConnection;
+import contrats.InvalidCredentialsException;
+import contrats.SignInFailed;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
-import Server.contrats.IVODService;
+import contrats.IVODService;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.file.Paths;
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Iterator;

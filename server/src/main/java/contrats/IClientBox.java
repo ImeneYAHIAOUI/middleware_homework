@@ -1,4 +1,4 @@
-package Server.contrats;
+package contrats;
 
 public interface IClientBox {
 }

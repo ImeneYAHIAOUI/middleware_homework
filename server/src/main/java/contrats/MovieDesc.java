@@ -1,4 +1,4 @@
-package Server;
+package contrats;
 
 import java.io.Serializable;
 

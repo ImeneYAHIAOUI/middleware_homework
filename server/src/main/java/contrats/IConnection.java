@@ -1,9 +1,4 @@
-package Server.contrats;
-
-import Server.contrats.IVODService;
-import Server.InvalidCredentialsException;
-import Server.SignInFailed;
-
+package contrats;
 import java.rmi.Remote;
 
 public interface IConnection extends Remote {

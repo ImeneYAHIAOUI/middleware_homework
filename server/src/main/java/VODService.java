@@ -1,15 +1,15 @@
-package Server;
-import Server.contrats.IClientBox;
-import Server.contrats.IVODService;
+import contrats.Bill;
+import contrats.IClientBox;
+import contrats.IVODService;
+import contrats.MovieDesc;
 
-import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
 public class VODService  extends UnicastRemoteObject implements IVODService {
-    List<MovieDesc>  MovieList=new ArrayList<>();
+    List<MovieDesc>  MovieList=new ArrayList<MovieDesc>();
     protected VODService() throws RemoteException {
     }
     public void AddMovie(MovieDesc movie){

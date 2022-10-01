@@ -1,4 +1,4 @@
-package Server;
+package contrats;
 
 public class SignInFailed  extends Exception {
     public SignInFailed(){

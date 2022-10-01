@@ -1,4 +1,3 @@
-package Server;
 
 public class Client {
     private String Password;
