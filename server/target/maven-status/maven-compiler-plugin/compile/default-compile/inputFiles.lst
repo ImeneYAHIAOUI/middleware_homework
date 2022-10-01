@@ -1,6 +1,8 @@
-C:\Users\souro\Desktop\MidSoc\ServerProject\1\src\main\java\Server\InvalidCredentialsException.java
-C:\Users\souro\Desktop\MidSoc\ServerProject\1\src\main\java\Server\Client.java
-C:\Users\souro\Desktop\MidSoc\ServerProject\1\src\main\java\Server\IVODService.java
-C:\Users\souro\Desktop\MidSoc\ServerProject\1\src\main\java\Server\App.java
-C:\Users\souro\Desktop\MidSoc\ServerProject\1\src\main\java\Server\Connection.java
-C:\Users\souro\Desktop\MidSoc\ServerProject\1\src\main\java\Server\SignInFailed.java
+C:\Users\souro\Desktop\MidSoc\sd\middleware_homework\server\src\main\java\Server\Server.java
+C:\Users\souro\Desktop\MidSoc\sd\middleware_homework\server\src\main\java\Server\Client.java
+C:\Users\souro\Desktop\MidSoc\sd\middleware_homework\server\src\main\java\Server\SignInFailed.java
+C:\Users\souro\Desktop\MidSoc\sd\middleware_homework\server\src\main\java\Server\contrats\IVODService.java
+C:\Users\souro\Desktop\MidSoc\sd\middleware_homework\server\src\main\java\Server\VODService.java
+C:\Users\souro\Desktop\MidSoc\sd\middleware_homework\server\src\main\java\Server\InvalidCredentialsException.java
+C:\Users\souro\Desktop\MidSoc\sd\middleware_homework\server\src\main\java\Server\contrats\IConnection.java
+C:\Users\souro\Desktop\MidSoc\sd\middleware_homework\server\src\main\java\Server\Connection.java

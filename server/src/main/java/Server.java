@@ -14,18 +14,17 @@ public class Server
         try{
             // crée l'objet distant
             Connection obj = new Connection();
+            obj.VodService.AddMovie(new MovieDesc("EGO","100234745","sjhdjs"));
+            obj.VodService.AddMovie(new MovieDesc("L'arnaqueur de tinder","123889245","Tinder"));
+
             // ici, nous exportons l'objet distant vers le stub
             IConnection stub = (IConnection) UnicastRemoteObject.exportObject(obj, 2001);
             Registry reg = LocateRegistry.getRegistry(1099);
             // Liaison de l'objet distant (stub) dans le Registre
             reg.rebind("Connection", stub);
             System.out.println("Le Serveur est prêt...");
-            Connection connection=new Connection();
-            connection.signIn("sourour","Gazzeh");
-            connection.login("Imene","Yahiaoui");
-            connection.login("sourour","Gazzeh");
         }catch(Exception e){
-
+            System.out.println(e.getMessage());
         }
     }
 }

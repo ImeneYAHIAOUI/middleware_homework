@@ -1,30 +1,28 @@
 package Server;
-
 import Server.contrats.IConnection;
-import Server.contrats.IVODService;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
-
+import Server.contrats.IVODService;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.file.Paths;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Connection  implements IConnection {
-    private List<Client> clientList;
-    VODService VodService;
-    private int LastRowNumberInFile;
-    File file;
-    public Connection(){
-        clientList=new ArrayList<Client>();
-        VodService=new VODService();
-        file = new File(System.getProperty("user.dir")+ Paths.get("/src/main/java/Server/DataBase/Clients.xls"));
 
+public class Connection  implements IConnection {
+    private List<Client> clientList=new ArrayList<Client>();
+    VODService VodService=new VODService();
+    private int LastRowNumberInFile;
+    File file=new File(System.getProperty("user.dir")+ Paths.get("/src/main/java/Server/DataBase/Clients.xls"));;
+    protected Connection() throws RemoteException {
+        super();
     }
 
     private boolean IsRegitered(HSSFSheet sheet, Client client ) {
@@ -105,7 +103,6 @@ public class Connection  implements IConnection {
         }catch(Exception exception){
             System.out.println(exception.getMessage());
         }
-
         return VodService;
     }
 
