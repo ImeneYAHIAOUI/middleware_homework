@@ -1,0 +1,6 @@
+Server\InvalidCredentialsException.class
+Server\Server.class
+Server\IVODService.class
+Server\Client.class
+Server\Connection.class
+Server\SignInFailed.class

@@ -9,19 +9,18 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.file.Paths;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Connection {
-    private List<Client> clientList;
+public class Connection implements IConnection {
+    private List<Client> clientList =new ArrayList<Client>();;
     private int LastRowNumberInFile;
-    File file;
-    public Connection(){
-        clientList=new ArrayList<Client>();
-
-        file = new File(System.getProperty("user.dir")+ Paths.get("/src/main/java/Server/DataBase/Clients.xls"));
-
+    VODService VodService=new VODService();;
+    File file= new File(System.getProperty("user.dir")+ Paths.get("/src/main/java/Server/DataBase/Clients.xls"));;
+    protected Connection() throws RemoteException {
+        super();
     }
 
     private boolean IsRegitered(HSSFSheet sheet, Client client ) {
@@ -40,6 +39,7 @@ public class Connection {
         return false;
     }
 
+    @Override
     public boolean signIn(String mail, String pwd) throws SignInFailed {
         Client client=new Client(mail,pwd);
         try{
@@ -76,7 +76,7 @@ public class Connection {
         }
 
     }
-
+    @Override
     public IVODService login(String mail, String pwd) throws InvalidCredentialsException {
         Client client =new Client(mail,pwd);
         try{
@@ -104,7 +104,7 @@ public class Connection {
             System.out.println(exception.getMessage());
         }
 
-        return null;
+        return VodService;
     }
 
 
