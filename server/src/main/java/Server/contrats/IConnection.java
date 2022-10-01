@@ -1,4 +1,8 @@
-package Server;
+package Server.contrats;
+
+import Server.contrats.IVODService;
+import Server.InvalidCredentialsException;
+import Server.SignInFailed;
 
 import java.rmi.Remote;
 

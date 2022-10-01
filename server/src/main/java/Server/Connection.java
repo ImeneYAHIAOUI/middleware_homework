@@ -1,5 +1,7 @@
 package Server;
 
+import Server.contrats.IConnection;
+import Server.contrats.IVODService;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -9,12 +11,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.file.Paths;
-import java.rmi.Remote;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Connection  implements  IConnection{
+public class Connection  implements IConnection {
     private List<Client> clientList;
     VODService VodService;
     private int LastRowNumberInFile;

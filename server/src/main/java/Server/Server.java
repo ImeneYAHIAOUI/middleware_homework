@@ -1,6 +1,8 @@
 package Server;
 
 
+import Server.contrats.IConnection;
+
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;

@@ -1,4 +1,4 @@
-package Server;
+package Server.contrats;
 
 import java.rmi.Remote;
 
