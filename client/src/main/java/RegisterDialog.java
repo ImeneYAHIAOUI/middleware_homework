@@ -1,6 +1,4 @@
 import contrats.IConnection;
-import contrats.IVODService;
-import contrats.InvalidCredentialsException;
 import contrats.SignInFailedException;
 
 import javax.swing.*;
@@ -8,6 +6,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 
 
 public class RegisterDialog extends JDialog {
@@ -78,6 +77,8 @@ public class RegisterDialog extends JDialog {
                     pfPassword.setText("");
                     succeeded = false;
 
+                } catch (RemoteException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });

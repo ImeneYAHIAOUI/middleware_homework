@@ -2,15 +2,14 @@
 import contrats.IConnection;
 import contrats.MovieDesc;
 
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 public class Server
 {
-    public static void main( String[] args )
-    {
-        try{
+    public static void main( String[] args ) throws RemoteException {
             // crée l'objet distant
             Connection obj = new Connection();
             obj.VodService.AddMovie(new MovieDesc("EGO","100234745","sjhdjs"));
@@ -22,8 +21,6 @@ public class Server
             // Liaison de l'objet distant (stub) dans le Registre
             reg.rebind("Connection", stub);
             System.out.println("Le Serveur est prêt...");
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+
     }
 }

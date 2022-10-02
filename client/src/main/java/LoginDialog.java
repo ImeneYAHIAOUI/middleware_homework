@@ -1,14 +1,12 @@
-
 import contrats.IConnection;
-import contrats.IVODService;
 import contrats.InvalidCredentialsException;
-import contrats.SignInFailedException;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 
 
 public class LoginDialog extends JDialog {
@@ -64,7 +62,7 @@ public class LoginDialog extends JDialog {
                 try {
                     connection.login(getMail(), getPassword());
                     JOptionPane.showMessageDialog(LoginDialog.this,
-                            "Hi " + getMail() + "! You have successfully logged in.",
+                            "You have successfully logged in.",
                             "Login",
                             JOptionPane.INFORMATION_MESSAGE);
                     succeeded = true;
@@ -79,6 +77,8 @@ public class LoginDialog extends JDialog {
                     pfPassword.setText("");
                     succeeded = false;
 
+                } catch (RemoteException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });

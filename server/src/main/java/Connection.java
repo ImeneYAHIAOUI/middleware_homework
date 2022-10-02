@@ -1,15 +1,13 @@
 import contrats.IConnection;
 import contrats.InvalidCredentialsException;
-import contrats.SignInFailed;
+import contrats.SignInFailedException;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import contrats.IVODService;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.nio.file.Paths;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -21,7 +19,7 @@ public class Connection  implements IConnection {
     private List<Client> clientList=new ArrayList<Client>();
     VODService VodService=new VODService();
     private int LastRowNumberInFile;
-    File file=new File(System.getProperty("user.dir")+ Paths.get("/src/main/java/Server/DataBase/Clients.xls"));;
+    File file=new File(System.getProperty("user.dir")+ Paths.get("/src/main/java/DataBase/Clients.xls"));;
     protected Connection() throws RemoteException {
         super();
 
@@ -43,7 +41,7 @@ public class Connection  implements IConnection {
         return false;
     }
 
-    public boolean signIn(String mail, String pwd) throws SignInFailed {
+    public boolean signIn(String mail, String pwd) throws SignInFailedException {
         Client client=new Client(mail,pwd);
         try{
             // Read XSL file
@@ -66,11 +64,11 @@ public class Connection  implements IConnection {
                     clientList.add(client);
                 }
                 else{
-                    throw  new SignInFailed("You are already registered");
+                    throw  new SignInFailedException("You are already registered");
                 }
 
             }else{
-                throw  new SignInFailed("You are already registered");
+                throw  new SignInFailedException("You are already registered");
             }
             return true;
         } catch (Exception exception){
@@ -82,12 +80,21 @@ public class Connection  implements IConnection {
 
     public IVODService login(String mail, String pwd) throws InvalidCredentialsException {
         Client client =new Client(mail,pwd);
-        try{
             // Read XSL file
-            FileInputStream inputStream = new FileInputStream(file);
-            // Get the workbook instance for XLS file
-            HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
-            // Get first sheet from the workbook
+        FileInputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        // Get the workbook instance for XLS file
+        HSSFWorkbook workbook = null;
+        try {
+            workbook = new HSSFWorkbook(inputStream);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        // Get first sheet from the workbook
             HSSFSheet sheet = workbook.getSheetAt(0);
             if(clientList.contains(client) ){
                 client.setConnected(true);
@@ -102,9 +109,6 @@ public class Connection  implements IConnection {
                     throw  new InvalidCredentialsException("You are not registered. Please sign in.");
                 }
             }
-        }catch(Exception exception){
-            System.out.println(exception.getMessage());
-        }
         return VodService;
     }
 
