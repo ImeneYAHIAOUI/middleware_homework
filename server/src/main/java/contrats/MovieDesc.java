@@ -16,7 +16,8 @@ public class MovieDesc implements Serializable {
 
     }
 
-    public String ToString(){
-        return  "-" +Isbn+" : "+Synopsis;
+    public String affiche(){
+        return  "Synopsis : "+Synopsis;
     }
+
 }

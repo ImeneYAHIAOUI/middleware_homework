@@ -24,6 +24,8 @@ public class ClientBox extends UnicastRemoteObject implements IClientBox {
             throw new RuntimeException(e);
         }
 
+
+
     }
 
 }
