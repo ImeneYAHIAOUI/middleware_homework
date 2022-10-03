@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="270f19c0-79a0-4783-8c90-a321c07cdda8" name="Changes" comment="" />
+    <list default="true" id="270f19c0-79a0-4783-8c90-a321c07cdda8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.idea/1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/Server/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/Server/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/Server/VODService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/Server/VODService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/Server/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/Server/Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/Server/Connection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,13 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/souro/Desktop/MidSoc/middleware_homework/1"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/souro/Desktop/MidSoc/sd/middleware_homework/server&quot;
+>>>>>>> 59e8e04726d24e6a98bf06bc04bb253bba7f9b84
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

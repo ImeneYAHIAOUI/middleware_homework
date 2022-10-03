@@ -1,0 +1,8 @@
+Server\contrats\IVODService.class
+Server\VODService.class
+Server\Client.class
+Server\Connection.class
+Server\SignInFailed.class
+Server\contrats\IConnection.class
+Server\InvalidCredentialsException.class
+Server\Server.class
