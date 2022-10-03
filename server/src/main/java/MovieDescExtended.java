@@ -12,7 +12,7 @@ public class MovieDescExtended extends MovieDesc {
         this.Teaser=teaser;
     }
     @Override
-    public String ToString() {
+    public String affiche() {
         return Synopsis+ Teaser.toString();
     }
 }

@@ -26,6 +26,7 @@ public class VODService  extends UnicastRemoteObject implements IVODService {
         if(!movieChoosen.isEmpty()) return new Bill(movieChoosen.get(0).MovieName,15);
 
         return null;
+
     }
 
 }

@@ -1,7 +1,7 @@
 
 public class Client {
     private String Password;
-    private Boolean Connected = false;
+    private Boolean Connected;
 
     private String Mail;
     public Client(String name, String password){

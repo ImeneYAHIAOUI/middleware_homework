@@ -16,7 +16,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
       <module name="client" options="--add-modules java.base,java.rmi,java.desktop" />
+=======
+      <module name="1" options="--add-modules java.base,java.rmi" />
+>>>>>>> 852a619365fa87e7003a175574d8eab2a4669715
     </option>
   </component>
 </project>

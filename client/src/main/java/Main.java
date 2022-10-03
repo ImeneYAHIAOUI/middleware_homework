@@ -1,4 +1,6 @@
+import contrats.IClientBox;
 import contrats.IConnection;
+import contrats.IVODService;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,8 +10,10 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RemoteException {
         IConnection connection = null;
+
+        IClientBox box = new ClientBox();
 
         try {
             Registry r =  LocateRegistry.getRegistry(1099);
@@ -21,10 +25,26 @@ public class Main {
 
             IConnection finalConnection = connection;
 
+
             loginBtn.addActionListener(
                     e -> {
                         LoginDialog loginDlg = new LoginDialog(frame, finalConnection);
                         loginDlg.setVisible(true);
+                        if (loginDlg.isSucceeded()) {
+                            IVODService VODService = loginDlg.getVODService();
+
+                            SwingUtilities.invokeLater(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    try {
+                                        new CatalogList(VODService, box);
+                                    } catch (RemoteException ex) {
+                                        throw new RuntimeException(ex);
+                                    }
+                                }
+                            });
+                        }
 
                     });
             RegisterBtn.addActionListener(

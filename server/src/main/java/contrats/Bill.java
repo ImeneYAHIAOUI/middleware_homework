@@ -8,4 +8,12 @@ public class Bill implements Serializable {
         this.movieName=name;
         this.outrageousPrice=price;
     }
+
+    public String getMovieName() {
+        return movieName;
+    }
+
+    public int getOutrageousPrice() {
+        return outrageousPrice;
+    }
 }

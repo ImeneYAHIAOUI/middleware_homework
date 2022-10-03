@@ -1,4 +1,5 @@
 import contrats.IConnection;
+import contrats.IVODService;
 import contrats.InvalidCredentialsException;
 
 import javax.swing.*;
@@ -20,9 +21,11 @@ public class LoginDialog extends JDialog {
     private JButton btnCancel;
     private boolean succeeded;
 
+    IVODService VODService;
+
     IConnection connection;
-    public LoginDialog(Frame parent,IConnection connection)
-    {
+
+    public LoginDialog(Frame parent, IConnection connection) {
         super(parent, "Login", true);
 
 
@@ -60,13 +63,18 @@ public class LoginDialog extends JDialog {
 
             public void actionPerformed(ActionEvent e) {
                 try {
-                    connection.login(getMail(), getPassword());
+
+                    VODService = connection.login(getMail(), getPassword());
+
+                    parent.dispose();
+                    dispose();
+
                     JOptionPane.showMessageDialog(LoginDialog.this,
                             "You have successfully logged in.",
                             "Login",
                             JOptionPane.INFORMATION_MESSAGE);
                     succeeded = true;
-                    dispose();
+
                 } catch (InvalidCredentialsException e1) {
                     JOptionPane.showMessageDialog(LoginDialog.this,
                             e1.getMessage(),
@@ -113,8 +121,12 @@ public class LoginDialog extends JDialog {
         return succeeded;
     }
 
-
+    public IVODService getVODService() {
+        return VODService;
+    }
 }
+
+
 
 
 

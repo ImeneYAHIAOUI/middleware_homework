@@ -62,7 +62,7 @@ public class RegisterDialog extends JDialog {
                 try {
                     connection.signIn(getMail(), getPassword());
                     JOptionPane.showMessageDialog(RegisterDialog.this,
-                            "Hi " + getMail() + "! Your account has been created.",
+                             "Your account has been created.",
                             "Register",
                             JOptionPane.INFORMATION_MESSAGE);
                     succeeded = true;
@@ -70,7 +70,7 @@ public class RegisterDialog extends JDialog {
                 } catch (SignInFailedException e1) {
                     JOptionPane.showMessageDialog(RegisterDialog.this,
                             e1.getMessage(),
-                            "Login",
+                            "register",
                             JOptionPane.ERROR_MESSAGE);
                     // reset Mail and password
                     tfMail.setText("");

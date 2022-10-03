@@ -42,12 +42,22 @@ public class Connection  implements IConnection {
 
     public boolean signIn(String mail, String pwd) throws SignInFailedException {
         Client client=new Client(mail,pwd);
-        try{
+
             // Read XSL file
-            FileInputStream inputStream = new FileInputStream(file);
-            // Get the workbook instance for XLS file
-            HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
-            // Get first sheet from the workbook
+        FileInputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        // Get the workbook instance for XLS file
+        HSSFWorkbook workbook = null;
+        try {
+            workbook = new HSSFWorkbook(inputStream);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        // Get first sheet from the workbook
             HSSFSheet sheet = workbook.getSheetAt(0);
             if(!clientList.contains(client)){
                 if(!IsRegitered(sheet,client)){
@@ -58,8 +68,17 @@ public class Connection  implements IConnection {
                     //PassWord
                     cell = row.createCell(1, CellType.STRING);
                     cell.setCellValue(client.GetPassword());
-                    FileOutputStream outFile = new FileOutputStream(file);
-                    workbook.write(outFile);
+                    FileOutputStream outFile = null;
+                    try {
+                        outFile = new FileOutputStream(file);
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                    try {
+                        workbook.write(outFile);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     clientList.add(client);
                 }
                 else{
@@ -70,10 +89,7 @@ public class Connection  implements IConnection {
                 throw  new SignInFailedException("You are already registered");
             }
             return true;
-        } catch (Exception exception){
-            System.out.println(exception.getMessage());
-            return false;
-        }
+
 
     }
     public IVODService login(String mail, String pwd) throws InvalidCredentialsException {
