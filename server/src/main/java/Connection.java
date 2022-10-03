@@ -22,7 +22,6 @@ public class Connection  implements IConnection {
     File file=new File(System.getProperty("user.dir")+ Paths.get("/src/main/java/DataBase/Clients.xls"));;
     protected Connection() throws RemoteException {
         super();
-
     }
 
     private boolean IsRegitered(HSSFSheet sheet, Client client ) {
@@ -77,7 +76,6 @@ public class Connection  implements IConnection {
         }
 
     }
-
     public IVODService login(String mail, String pwd) throws InvalidCredentialsException {
         Client client =new Client(mail,pwd);
             // Read XSL file
