@@ -3,7 +3,6 @@ package Server;
 public class Client {
     private String Password;
     private Boolean Connected;
-
     private String Mail;
     public Client(String name, String password){
         this.Password=password;
