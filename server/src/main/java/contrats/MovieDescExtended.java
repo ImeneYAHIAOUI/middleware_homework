@@ -4,7 +4,6 @@ import contrats.MovieDesc;
 
 public class MovieDescExtended extends MovieDesc {
     private byte[] Teaser;
-
     public MovieDescExtended(String movieName,String isbn,String synopsis,byte[] teaser){
         super(movieName,isbn,synopsis);
         this.Teaser=teaser;

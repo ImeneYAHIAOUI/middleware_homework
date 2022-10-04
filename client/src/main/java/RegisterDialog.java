@@ -7,11 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-
-
 public class RegisterDialog extends JDialog {
-
-
     private JTextField tfMail;
     private JPasswordField pfPassword;
     private JLabel lbMail;

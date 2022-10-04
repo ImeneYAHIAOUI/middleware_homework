@@ -4,6 +4,7 @@ import contrats.IVODService;
 import contrats.MovieDesc;
 
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -21,9 +22,23 @@ public class VODService  extends UnicastRemoteObject  implements IVODService  {
         return MovieList;
     }
      @Override
-    public Bill playmovie(String isbn, IClientBox box){
+    public Bill playmovie(String isbn, IClientBox box) {
         List<MovieDesc> movieChoosen=MovieList.stream().filter(movie -> movie.Isbn.equals(isbn)).toList();
+        try{
+            box.stream("Are you ready?".getBytes(StandardCharsets.UTF_8));
+        }catch (RemoteException e){
 
+        }
+         Thread t = new Thread() {
+             public void run() {
+                 try{
+                     box.stream("Here is the film".getBytes(StandardCharsets.UTF_8));
+                     box.stream("ASSBDIJDSJFOSJFPSKSKepzzpepzpezpzpe".getBytes(StandardCharsets.UTF_8));
+
+                 }catch (RemoteException e){
+
+                 }}};
+         t.start();
         if(!movieChoosen.isEmpty()) return new Bill(movieChoosen.get(0).MovieName,15);
 
         return null;
