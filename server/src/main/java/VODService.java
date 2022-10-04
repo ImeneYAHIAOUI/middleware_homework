@@ -3,12 +3,13 @@ import contrats.IClientBox;
 import contrats.IVODService;
 import contrats.MovieDesc;
 
+import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VODService  extends UnicastRemoteObject implements IVODService {
+public class VODService  extends UnicastRemoteObject  implements IVODService  {
     List<MovieDesc>  MovieList=new ArrayList<MovieDesc>();
     protected VODService() throws RemoteException {
     }

@@ -1,3 +1,5 @@
+package contrats;
+
 import contrats.MovieDesc;
 
 public class MovieDescExtended extends MovieDesc {

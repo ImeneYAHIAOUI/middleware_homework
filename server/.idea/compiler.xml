@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="1" />
+        <module name="server" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="1" options="--add-modules java.base,java.rmi" />
+      <module name="server" options="--add-modules java.rmi,java.base" />
     </option>
   </component>
 </project>

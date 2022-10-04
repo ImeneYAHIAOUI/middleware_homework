@@ -16,8 +16,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-
       <module name="1" options="--add-modules java.base,java.rmi" />
+      <module name="client" options="--add-modules java.rmi,java.base,java.desktop" />
     </option>
   </component>
 </project>

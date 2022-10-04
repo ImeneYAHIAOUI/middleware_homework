@@ -1,6 +1,7 @@
 
 import contrats.IConnection;
 import contrats.MovieDesc;
+import contrats.MovieDescExtended;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
