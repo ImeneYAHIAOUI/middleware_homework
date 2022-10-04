@@ -9,7 +9,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-public class Main {
+public class Client {
     public static void main(String[] args) throws RemoteException {
         IConnection connection = null;
 
@@ -59,6 +59,10 @@ public class Main {
             frame.getContentPane().add(loginBtn);
             frame.getContentPane().add(RegisterBtn);
             frame.setVisible(true);
+            Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+            int x = (int) ((dimension.getWidth() - frame.getWidth()) / 2);
+            int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2);
+            frame.setLocation(x, y);
 
         } catch (RemoteException | NotBoundException e) {
             throw new RuntimeException(e);

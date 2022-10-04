@@ -5,6 +5,7 @@ import contrats.MovieDesc;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.awt.*;
 import java.rmi.RemoteException;
 import java.util.List;
 
@@ -65,14 +66,19 @@ public class CatalogList {
         });
 
         jTextArea.setColumns(20);
-        jTextArea.setRows(5);
+        jTextArea.setWrapStyleWord(true);
+        jTextArea.setLineWrap(true);
 
         jPanel.add(jList);
         jPanel.add(jTextArea);
         jPanel.add(chooseButton);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.add(jPanel);
-        f.pack();
+        f.setSize(500, 300);
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (int) ((dimension.getWidth() - f.getWidth()) / 2);
+        int y = (int) ((dimension.getHeight() - f.getHeight()) / 2);
+        f.setLocation(x, y);
         f.setVisible(true);
     }
 
