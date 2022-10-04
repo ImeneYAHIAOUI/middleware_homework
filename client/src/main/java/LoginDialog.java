@@ -73,6 +73,7 @@ public class LoginDialog extends JDialog {
                             "You have successfully logged in.",
                             "Login",
                             JOptionPane.INFORMATION_MESSAGE);
+                    //change for commit
                     succeeded = true;
 
                 } catch (InvalidCredentialsException e1) {
