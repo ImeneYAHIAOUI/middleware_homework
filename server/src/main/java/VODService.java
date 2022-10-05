@@ -38,15 +38,11 @@ public class VODService  extends UnicastRemoteObject  implements IVODService  {
                              box.stream("ASSBDIJDSJFOSJFPSKSKepzzpepzpezpzpe".getBytes(StandardCharsets.UTF_8));
                          }
                             box.stream("The end".getBytes(StandardCharsets.UTF_8));
-                     }catch (RemoteException e){
-                         new Bill(movieChoosen.get(0).MovieName,0);
-                     }}};
-             t.start();
-             return new Bill(movieChoosen.get(0).MovieName,15);
-         }
+
          return null;
 
      }
+
 
 
 }
