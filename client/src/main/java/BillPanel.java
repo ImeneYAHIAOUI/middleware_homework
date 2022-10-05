@@ -33,21 +33,9 @@ public class BillPanel   {
             f.dispose();
             JOptionPane optPane = new JOptionPane("film purchased",JOptionPane.YES_OPTION);
             optPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
-
-            JPanel buttonPanel = (JPanel)optPane.getComponent(1);
-
-            JButton button = (JButton)buttonPanel.getComponent(0);
-
-            button.setText("Start streaming");
-
             JDialog d = optPane.createDialog(null,"transaction completed");
             d.show();
-
-
-
-
         });
-
         cs.gridx = 0;
         cs.gridy = 5;
         jPanel.add(confirmButton,cs);
