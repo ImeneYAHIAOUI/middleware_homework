@@ -1,6 +1,7 @@
 import contrats.IClientBox;
 import contrats.IVODService;
 import contrats.MovieDesc;
+import contrats.MovieDescExtended;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -19,6 +20,8 @@ public class CatalogList {
 
     private JButton chooseButton;
 
+    private JButton teaserButton;
+
     private IClientBox clientBox;
 
     public CatalogList(IVODService VODService, IClientBox clientBox) throws RemoteException {
@@ -30,6 +33,8 @@ public class CatalogList {
         jList = new JList();
         jTextArea = new JTextArea();
         chooseButton = new JButton("Select Movie");
+        teaserButton = new JButton("Teaser");
+        teaserButton.setEnabled(false);
 
         jList.setModel(new AbstractListModel() {
 
@@ -54,17 +59,33 @@ public class CatalogList {
         });
 
         chooseButton.addActionListener(e -> {
+            if(jList.getSelectedIndex() != -1){
                 f.dispose();
+                try {
 
-            try {
-                new BillPanel(VODService.playmovie(catalog.get(jList.getSelectedIndex()).Isbn, clientBox));
-            } catch (RemoteException ex) {
-                throw new RuntimeException(ex);
+
+                    new BillPanel(VODService.playmovie(catalog.get(jList.getSelectedIndex()).Isbn, clientBox), clientBox.getVideoBytes());
+                } catch (RemoteException ex) {
+                    throw new RuntimeException(ex);
+                }
+                }
+           else
+           {
+                JOptionPane.showMessageDialog(f, "Please select a movie","no movie selected",JOptionPane.ERROR_MESSAGE);
             }
 
 
         });
+        teaserButton.addActionListener(e -> {
 
+            try {
+                if(catalog.get(jList.getSelectedIndex()) instanceof MovieDescExtended){
+                    new TeaserPanel( ((MovieDescExtended) catalog.get(jList.getSelectedIndex())).getTeaser());
+                }
+            } catch (RemoteException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
         jTextArea.setColumns(20);
         jTextArea.setWrapStyleWord(true);
         jTextArea.setLineWrap(true);
@@ -72,6 +93,7 @@ public class CatalogList {
         jPanel.add(jList);
         jPanel.add(jTextArea);
         jPanel.add(chooseButton);
+        jPanel.add(teaserButton);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.add(jPanel);
         f.setSize(500, 300);
@@ -87,9 +109,16 @@ public class CatalogList {
         int index = jList.getSelectedIndex();
         try {
             jTextArea.setText(VODService.viewCatalog().get(index).affiche());
+            if (VODService.viewCatalog().get(index) instanceof contrats.MovieDescExtended) {
+                teaserButton.setEnabled(true);
+            }
+            else {
+                teaserButton.setEnabled(false);
+            }
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
 

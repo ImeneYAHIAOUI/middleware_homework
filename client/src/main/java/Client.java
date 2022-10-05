@@ -10,6 +10,17 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 public class Client {
+
+    /**
+     *On a utilisé java swing pour dialoguer avec le client, les bytes des movies sont affichés sur le terminal
+     *
+     */
+
+    /**
+     * d'ou au fait que la méthode playmovie est responsable de renvoyer la facture et de lancer le film, je ne suis pas arriver à afficher le film apres la fin de transaction,
+     * je pense que séparer ses deux taches dans deux méthodes distinctes aurait été plus facile à gérer
+     *
+     */
     public static void main(String[] args) throws RemoteException {
         IConnection connection = null;
 
@@ -39,6 +50,7 @@ public class Client {
                                 public void run() {
                                     try {
                                         new CatalogList(VODService, box);
+
                                     } catch (RemoteException ex) {
                                         throw new RuntimeException(ex);
                                     }

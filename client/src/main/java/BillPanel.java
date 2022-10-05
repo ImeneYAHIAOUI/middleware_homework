@@ -9,8 +9,11 @@ public class BillPanel   {
     JButton confirmButton;
     private JPanel jPanel;
 
-    public BillPanel(Bill bill){
+    byte[] videoBytes;
+
+    public BillPanel(Bill bill, byte[] videoBytes) {
         this.bill=bill;
+        this.videoBytes=videoBytes;
 
         f = new JFrame("Bill");
         jPanel = new JPanel(new GridBagLayout());
@@ -28,10 +31,20 @@ public class BillPanel   {
         jPanel.add(label2,cs);
         confirmButton.addActionListener(e -> {
             f.dispose();
-            JOptionPane.showMessageDialog(this.f,
-                     "transaction completed",
-                    "Bill",
-                    JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane optPane = new JOptionPane("film purchased",JOptionPane.YES_OPTION);
+            optPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+
+            JPanel buttonPanel = (JPanel)optPane.getComponent(1);
+
+            JButton button = (JButton)buttonPanel.getComponent(0);
+
+            button.setText("Start streaming");
+
+            JDialog d = optPane.createDialog(null,"transaction completed");
+            d.show();
+
+
+
 
         });
 

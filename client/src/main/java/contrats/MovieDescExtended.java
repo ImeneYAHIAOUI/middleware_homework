@@ -1,5 +1,8 @@
 package contrats;
 
+import java.nio.charset.StandardCharsets;
+import java.rmi.RemoteException;
+
 public class MovieDescExtended extends MovieDesc {
     private byte[] Teaser;
 
@@ -13,6 +16,10 @@ public class MovieDescExtended extends MovieDesc {
     }
     @Override
     public String affiche() {
-        return Synopsis+ Teaser.toString();
+        return "Synopsis : "+Synopsis+ "Teaser: " +new String(Teaser, StandardCharsets.UTF_8);
+    }
+
+    public byte[] getTeaser() throws RemoteException {
+        return Teaser;
     }
 }

@@ -5,6 +5,7 @@ import java.rmi.RemoteException;
 
 public interface IClientBox extends Remote {
 
-    void stream(byte[] chunck) throws RemoteException;
+     void stream(byte[] chunck) throws RemoteException;
 
+    byte[] getVideoBytes() throws RemoteException ;
 }
